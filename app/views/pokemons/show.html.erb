@@ -1,0 +1,12 @@
+<h1><%= @pokemon_data['name'].capitalize %> (ID: <%= @pokemon_data['id'] %>)</h1>
+<img src="<%= @pokemon_data['sprites']['front_default'] %>" alt="<%= @pokemon_data['name'] %>">
+<p><strong>高さ:</strong> <%= @pokemon_data['height'] %></p>
+<p><strong>重さ:</strong> <%= @pokemon_data['weight'] %></p>
+<p><strong>特性:</strong> <%= @pokemon_data['abilities'].map { |ability| ability['ability']['name'] }.join(', ') %></p>
+<p><strong>種族値:</strong></p>
+<ul>
+  <% @pokemon_data['stats'].each do |stat| %>
+    <li><%= stat['stat']['name'] %>: <%= stat['base_stat'] %></li>
+  <% end %>
+</ul>
+<%= link_to '戻る', root_path %>
