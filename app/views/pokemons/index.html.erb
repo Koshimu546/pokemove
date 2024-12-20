@@ -1,0 +1,6 @@
+<h1>ポケモンデータ表示アプリ</h1>
+<%= form_with(url: pokemon_path('dummy'), method: :get, local: true) do %>
+  <%= label_tag :id, "ポケモンのIDまたは名前を入力" %>
+  <%= text_field_tag :id %>
+  <%= submit_tag "検索" %>
+<% end %>
